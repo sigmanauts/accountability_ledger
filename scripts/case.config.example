@@ -1,0 +1,24 @@
+# Example config for scripts/new_case.sh
+# Copy to scripts/case.config and edit values, then run:
+#   bash scripts/new_case.sh -c scripts/case.config
+
+# Required
+ENTITY_ID="example-entity"
+SLUG="sample"
+DATE="2025-01-01T00:00:00Z"  # ISO 8601 UTC (YYYY-MM-DDTHH:MM:SSZ)
+
+# Optional
+# Comma-separated list of actors
+ACTORS="ergo-foundation,huobi"
+
+# Claims: either a single string (via CLI -C) or uncomment the array below
+#CLAIMS=("Notice of intent to commence legal proceedings"
+#        "Attempted bribery and extortion")
+
+# References: each entry uses "type|Label|Value"
+# Types: url, hash, onchain, file
+#REFS=("url|Public tweet|https://twitter.com/..."
+#      "file|Notice letter|cases/example-entity-sample/notice_of_intent.md")
+
+# Path to a notice letter to copy into the case directory (optional)
+# NOTICE_LETTER="path/to/notice_of_intent.md"

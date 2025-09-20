@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Case Metadata",
+  "type": "object",
+  "properties": {
+    "entity_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "summary": { "type": "string" }
+  },
+  "required": ["entity_id", "slug", "created_at"],
+  "additionalProperties": false
+}

@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Archives and packaged outputs
+mas_package/*.zip
+mas_package/*.tar
+mas_package/*.gz
+
+# Editor/IDE
+.vscode/
+.idea/
