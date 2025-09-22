@@ -71,7 +71,7 @@ Notes:
   - `python3 scripts/validate_repo.py --with-checksums`
 
 ### compute_checksums.py (checksum manager)
-- Purpose: Maintain per-directory `SHA256SUMS.txt` manifests across tracked trees (`evidence/`, `cases/`, `timeline/`, `analysis/`, `mas_package/`).
+- Purpose: Maintain per-directory `SHA256SUMS.txt` manifests across tracked trees (`evidence/`, `cases/`, `analysis/`, `mas_package/`).
 - Usage:
   - Write/update: `python3 scripts/compute_checksums.py` (or `make checksums`)
   - Verify only: `python3 scripts/compute_checksums.py --check`
@@ -102,7 +102,7 @@ Notes:
 
 ## Tips
 
-- Timeline location: canonical path is `cases/{entity}-{slug}/timeline/YYYY-MM-DD-{slug}.md`. The legacy global `timeline/` at repo root is still validated for back-compat.
+- Timeline location: canonical path is `cases/{entity}-{slug}/timeline/YYYY-MM-DD-{slug}.md`.
 - Keep evidence under the appropriate case directory and reference files in timeline entries via `references` front matter.
 - Use `make validate` locally before opening a PR; CI also runs validation and DCO checks.
 - Consider running packaging with checksums for regulator-facing bundles.

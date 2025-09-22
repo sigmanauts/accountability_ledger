@@ -2,7 +2,7 @@
 """
 Compute/verify per-directory SHA-256 manifests (SHA256SUMS.txt).
 
-- Scans these top-level trees: evidence/, cases/, timeline/, analysis/, mas_package/
+- Scans these top-level trees: evidence/, cases/, analysis/, mas_package/
 - For each directory that contains regular files (non-hidden), maintains a manifest with lines:
     <sha256>  <filename>
 - Only files directly in that directory are listed (not recursive per manifest).
@@ -20,7 +20,7 @@ import os
 from pathlib import Path
 import sys
 
-TOPS = ("evidence", "cases", "timeline", "analysis", "mas_package")
+TOPS = ("evidence", "cases", "analysis", "mas_package")
 MANIFEST = "SHA256SUMS.txt"
 
 

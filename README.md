@@ -5,7 +5,7 @@ Open, neutral, and simple. This repo helps projects publish market‑conduct evi
 ## TL;DR (60‑second tour)
 
 - 🧾 Evidence goes in `cases/{entity}-{slug}/` (plus a short case README).
-- 🗓️ Each event gets a Markdown timeline entry: `cases/{entity}-{slug}/timeline/YYYY-MM-DD-{slug}.md` (canonical) with YAML front matter (date, actors, claims, references). Legacy `timeline/` at repo root is still validated for back-compat.
+- 🗓️ Each event gets a Markdown timeline entry: `cases/{entity}-{slug}/timeline/YYYY-MM-DD-{slug}.md` with YAML front matter (date, actors, claims, references).
 - 🧰 Two scripts do the heavy lifting:
   - `scripts/new_case.sh` scaffolds a case + timeline from flags or a tiny config file.
   - `scripts/finalize.sh` runs basic validation and can (optionally) package a submission.
@@ -59,7 +59,7 @@ bash scripts/finalize.sh --package cases/my-exchange-notice-of-intent
   - Add a short case README summarising actors, claims, and sources.
 
 - Structured timeline
-  - One file per event: `cases/{entity}-{slug}/timeline/YYYY-MM-DD-{slug}.md` (canonical; legacy global `timeline/` still accepted)
+  - One file per event: `cases/{entity}-{slug}/timeline/YYYY-MM-DD-{slug}.md`
   - Use YAML front matter: `date`, `actors`, `claims`, `references` (URL, file, on‑chain, or content hash).
 
 - Reviewable workflow
@@ -103,8 +103,7 @@ bash scripts/finalize.sh --package cases/htx-notice-of-intent
 ```
 /evidence        primary documents (if not tied to a single case)
 /cases           structured folders per entity/case
-/cases/{entity}-{slug}/timeline per-case dated entries with YAML front matter (canonical)
-/timeline        legacy global location (validated for back-compat)
+/cases/{entity}-{slug}/timeline per-case dated entries with YAML front matter
 /analysis        methods and summaries
 /mas_package     ready-to-submit bundles
 /templates       forms for affidavits, redactions, notices

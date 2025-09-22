@@ -13,7 +13,7 @@ Short description of the case.
 - Other parties:
 
 ## Timeline
-List dated events with references. Create entries in `cases/<entity-id>-<short-slug>/timeline/` as `YYYY-MM-DD-<slug>.md`. (Legacy global `timeline/` is still accepted by validation.)
+List dated events with references. Create entries in `cases/<entity-id>-<short-slug>/timeline/` as `YYYY-MM-DD-<slug>.md`.
 
 ## Sources
 - File:

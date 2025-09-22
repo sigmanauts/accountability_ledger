@@ -4,7 +4,7 @@ Link the related issue and provide a concise description of the changes.
 Fixes: #<issue-number>
 
 ## Checklist
-- [ ] I followed naming rules (`cases/{entity-id}-{slug}`, `timeline/YYYY-MM-DD-{slug}.md`)
+- [ ] I followed naming rules (`cases/{entity-id}-{slug}`, `cases/{entity-id}-{slug}/timeline/YYYY-MM-DD-{slug}.md`)
 - [ ] I ran `make checksums` and updated `SHA256SUMS.txt` where needed
 - [ ] I ran `make validate` locally and fixed any issues
 - [ ] I included a redactions cover note if applicable

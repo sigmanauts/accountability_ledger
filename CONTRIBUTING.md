@@ -8,7 +8,7 @@ Thank you for contributing to Accountability Ledger. This repository is designed
 - Checksums: Optional; generated during packaging via `scripts/finalize.sh --with-checksums` when a regulator-ready bundle is needed.
 - Timestamps: UTC in ISO 8601 format (e.g., 2025-09-18T11:45:00Z).
 - Entity IDs: lowercase, hyphenated, pattern: `[a-z0-9-]+`.
-- Timeline filenames: `cases/{entity-id}-{slug}/timeline/YYYY-MM-DD-{slug}.md` (canonical; slug: `[a-z0-9-]+`). Legacy global `timeline/` is still accepted by validation.
+- Timeline filenames: `cases/{entity-id}-{slug}/timeline/YYYY-MM-DD-{slug}.md` (slug: `[a-z0-9-]+`).
 
 ## Submission Workflow
 
@@ -56,7 +56,7 @@ PRs without “Signed-off-by:” in commits may be rejected.
 ## Naming Rules
 
 - Case folder: `cases/{entity-id}-{short-slug}` (e.g., `cases/acme-exchange-withdrawal-halt`)
-- Timeline entry: `timeline/YYYY-MM-DD-{slug}.md`
+- Timeline entry: `cases/{entity-id}-{slug}/timeline/YYYY-MM-DD-{slug}.md`
 - Avoid spaces, uppercase, and special characters.
 
 ## Checksums
@@ -90,7 +90,7 @@ Compare the output to the corresponding entry in `SHA256SUMS.txt` within that fi
 
 2) Add materials:
 - Put files under `cases/my-exchange-withdrawal-halts/` (or `evidence/` if generic).
-- Add a timeline entry `cases/{entity-id}-{slug}/timeline/YYYY-MM-DD-withdrawal-halts.md` (canonical; legacy global `timeline/` accepted) with YAML front matter (date, actors, claims, references).
+- Add a timeline entry `cases/{entity-id}-{slug}/timeline/YYYY-MM-DD-withdrawal-halts.md` with YAML front matter (date, actors, claims, references).
 
 3) Compute/verify checksums:
 - `make checksums`  (updates or creates `SHA256SUMS.txt` per directory)

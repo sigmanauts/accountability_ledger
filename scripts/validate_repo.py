@@ -4,7 +4,7 @@ Repository validator for Accountability Ledger.
 
 Checks:
 - Case folder naming: cases/{entity}-{slug}, each part: [a-z0-9-]+
-- Timeline filenames: cases/{entity}-{slug}/timeline/YYYY-MM-DD-{slug}.md (canonical); legacy timeline/YYYY-MM-DD-{slug}.md at repo root also validated
+- Timeline filenames: cases/{entity}-{slug}/timeline/YYYY-MM-DD-{slug}.md
   - YAML front matter contains: date, actors, claims
   - date ISO 8601, matches filename date prefix
 - Checksum manifests (SHA256SUMS.txt):
@@ -25,7 +25,7 @@ from pathlib import Path
 from typing import Dict, Tuple, List
 import argparse
 
-TOPS = ("evidence", "cases", "timeline", "analysis", "mas_package")
+TOPS = ("evidence", "cases", "analysis", "mas_package")
 MANIFEST = "SHA256SUMS.txt"
 CASE_DIR_RE = re.compile(r"^[a-z0-9-]+-[a-z0-9-]+$")
 TIMELINE_FILE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}-[a-z0-9-]+\.md$")
@@ -139,12 +139,8 @@ def validate_timeline(repo: Path) -> List[str]:
                 if "claims" not in data:
                     errors.append(f"Missing 'claims' in front matter: {p.name}")
 
-    # 1) Global timeline directory (legacy/back-compat)
-    global_root = repo / "timeline"
-    if global_root.exists():
-        validate_dir(global_root)
 
-    # 2) Per-case timelines: cases/{entity}-{slug}/timeline
+    # Per-case timelines: cases/{entity}-{slug}/timeline
     cases_root = repo / "cases"
     if cases_root.exists():
         for case_dir in cases_root.iterdir():
