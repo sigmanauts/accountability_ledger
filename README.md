@@ -5,7 +5,7 @@ Open, neutral, and simple. This repo helps projects publish market‑conduct evi
 ## TL;DR (60‑second tour)
 
 - 🧾 Evidence goes in `cases/{entity}-{slug}/` (plus a short case README).
-- 🗓️ Each event gets a Markdown timeline entry: `timeline/YYYY-MM-DD-{slug}.md` with YAML front matter (date, actors, claims, references).
+- 🗓️ Each event gets a Markdown timeline entry: `cases/{entity}-{slug}/timeline/YYYY-MM-DD-{slug}.md` (canonical) with YAML front matter (date, actors, claims, references). Legacy `timeline/` at repo root is still validated for back-compat.
 - 🧰 Two scripts do the heavy lifting:
   - `scripts/new_case.sh` scaffolds a case + timeline from flags or a tiny config file.
   - `scripts/finalize.sh` runs basic validation and can (optionally) package a submission.
@@ -28,9 +28,19 @@ bash scripts/new_case.sh -c scripts/case.config
 # bash scripts/new_case.sh -e my-exchange -s notice-of-intent -d "2025-09-18T00:00:00Z" -a "ergo-foundation,my-exchange" -C "Main claim"
 ```
 
+Alternative (Makefile):
+```bash
+make new-case ENTITY_ID=my-exchange SLUG=notice-of-intent
+```
+
 3) Validate (basic checks)
 ```bash
 bash scripts/finalize.sh
+```
+
+Alternative (Makefile):
+```bash
+make validate
 ```
 
 4) Open a Pull Request linking your Issue
@@ -49,7 +59,7 @@ bash scripts/finalize.sh --package cases/my-exchange-notice-of-intent
   - Add a short case README summarising actors, claims, and sources.
 
 - Structured timeline
-  - One file per event: `timeline/YYYY-MM-DD-{slug}.md`
+  - One file per event: `cases/{entity}-{slug}/timeline/YYYY-MM-DD-{slug}.md` (canonical; legacy global `timeline/` still accepted)
   - Use YAML front matter: `date`, `actors`, `claims`, `references` (URL, file, on‑chain, or content hash).
 
 - Reviewable workflow
@@ -93,7 +103,8 @@ bash scripts/finalize.sh --package cases/htx-notice-of-intent
 ```
 /evidence        primary documents (if not tied to a single case)
 /cases           structured folders per entity/case
-/timeline        dated entries with YAML front matter
+/cases/{entity}-{slug}/timeline per-case dated entries with YAML front matter (canonical)
+/timeline        legacy global location (validated for back-compat)
 /analysis        methods and summaries
 /mas_package     ready-to-submit bundles
 /templates       forms for affidavits, redactions, notices
@@ -101,10 +112,17 @@ bash scripts/finalize.sh --package cases/htx-notice-of-intent
 /schemas         JSON Schemas for optional validation
 ```
 
-Key scripts:
+Key scripts and Makefile targets:
 - `scripts/new_case.sh` — prompts or reads config to scaffold case + timeline
 - `scripts/finalize.sh` — validate; optionally package a zip for submission
 - `scripts/case.config.example` — tiny editable config template
+- Makefile targets:
+  - `make new-case ENTITY_ID=foo SLUG=bar` — scaffolds via `scripts/new_case.py`
+  - `make validate` — runs `scripts/validate_repo.py`
+  - `make checksums` — runs `scripts/compute_checksums.py`
+  - `make package-mas CASE=cases/foo-bar` — runs `scripts/package_mas.py`
+
+See `scripts/README.md` for details and additional tips.
 
 Helpful templates:
 - `templates/case/README.md` — case skeleton

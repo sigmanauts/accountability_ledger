@@ -11,7 +11,7 @@ Example placeholder case to demonstrate structure and standards.
 - Entity: example-entity
 
 ## Timeline
-See timeline/2025-01-01-sample.md
+See cases/example-entity-sample/timeline/2025-01-01-sample.md
 
 ## Sources
-- (Add files into this case folder or evidence/ and run `make checksums`)
+- (Optional) Run `make checksums` after adding files to create/update `SHA256SUMS.txt` manifests.

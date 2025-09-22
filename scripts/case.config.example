@@ -9,7 +9,7 @@ DATE="2025-01-01T00:00:00Z"  # ISO 8601 UTC (YYYY-MM-DDTHH:MM:SSZ)
 
 # Optional
 # Comma-separated list of actors
-ACTORS="ergo-foundation,huobi"
+ACTORS="ergo-foundation,example-exchange"
 
 # Claims: either a single string (via CLI -C) or uncomment the array below
 #CLAIMS=("Notice of intent to commence legal proceedings"
@@ -17,7 +17,7 @@ ACTORS="ergo-foundation,huobi"
 
 # References: each entry uses "type|Label|Value"
 # Types: url, hash, onchain, file
-#REFS=("url|Public tweet|https://twitter.com/..."
+#REFS=("url|Public tweet|https://x.com/..."
 #      "file|Notice letter|cases/example-entity-sample/notice_of_intent.md")
 
 # Path to a notice letter to copy into the case directory (optional)

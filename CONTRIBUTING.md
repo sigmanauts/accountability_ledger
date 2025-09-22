@@ -8,20 +8,30 @@ Thank you for contributing to Accountability Ledger. This repository is designed
 - Checksums: Optional; generated during packaging via `scripts/finalize.sh --with-checksums` when a regulator-ready bundle is needed.
 - Timestamps: UTC in ISO 8601 format (e.g., 2025-09-18T11:45:00Z).
 - Entity IDs: lowercase, hyphenated, pattern: `[a-z0-9-]+`.
-- Timeline filenames: `timeline/YYYY-MM-DD-{slug}.md` (slug: `[a-z0-9-]+`).
+- Timeline filenames: `cases/{entity-id}-{slug}/timeline/YYYY-MM-DD-{slug}.md` (canonical; slug: `[a-z0-9-]+`). Legacy global `timeline/` is still accepted by validation.
 
 ## Submission Workflow
 
 1. Open an Issue using the “Case” template with a short summary and list of sources.
-2. Create a case via `scripts/new_case.sh` using a config file or flags.
-   - Config: `cp scripts/case.config.example scripts/case.config` (edit values)
-   - Run: `bash scripts/new_case.sh -c scripts/case.config`
-3. Run basic validation:
-   - `bash scripts/finalize.sh`
+
+2. Create a case (choose one):
+   - Shell: `bash scripts/new_case.sh -c scripts/case.config`
+     - Config: `cp scripts/case.config.example scripts/case.config` (edit values)
+   - Makefile: `make new-case ENTITY_ID={entity-id} SLUG={short-slug}`
+
+3. Validate (basic checks):
+   - Shell: `bash scripts/finalize.sh`
+   - Makefile: `make validate`
+
 4. Open a Pull Request linking the issue.
+
 5. Optional: prepare a regulator-ready package (and checksums if needed):
-   - `bash scripts/finalize.sh --package cases/{entity-id}-{slug}`
-   - add `--with-checksums` to write `SHA256SUMS.txt` before packaging
+   - Shell: `bash scripts/finalize.sh --package cases/{entity-id}-{slug}`
+     - add `--with-checksums` to write `SHA256SUMS.txt` before packaging
+   - Makefile: `make package-mas CASE=cases/{entity-id}-{slug}`
+     - or run `make checksums` beforehand to refresh manifests
+
+See `scripts/README.md` for more details on these flows.
 
 ## Redactions
 
@@ -80,7 +90,7 @@ Compare the output to the corresponding entry in `SHA256SUMS.txt` within that fi
 
 2) Add materials:
 - Put files under `cases/my-exchange-withdrawal-halts/` (or `evidence/` if generic).
-- Add a timeline entry `timeline/YYYY-MM-DD-withdrawal-halts.md` with YAML front matter (date, actors, claims, references).
+- Add a timeline entry `cases/{entity-id}-{slug}/timeline/YYYY-MM-DD-withdrawal-halts.md` (canonical; legacy global `timeline/` accepted) with YAML front matter (date, actors, claims, references).
 
 3) Compute/verify checksums:
 - `make checksums`  (updates or creates `SHA256SUMS.txt` per directory)

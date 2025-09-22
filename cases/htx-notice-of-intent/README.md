@@ -19,7 +19,7 @@ Remedy demanded within 30 days: restitution (≥ USD 450,000), reversal of delis
 - htx
 
 ## Timeline
-See timeline/2025-09-18-notice-of-intent.md
+See cases/htx-notice-of-intent/timeline/2025-09-18-notice-of-intent.md
 
 ## Sources
 - File:

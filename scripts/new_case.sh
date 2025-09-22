@@ -10,9 +10,9 @@ set -euo pipefail
 #   ENTITY_ID="example-entity"
 #   SLUG="sample"
 #   DATE="2025-01-01T00:00:00Z"
-#   ACTORS="ergo-foundation,huobi"
+#   ACTORS="ergo-foundation,example-exchange"
 #   CLAIMS=("Notice of intent to commence legal proceedings" "Attempted bribery and extortion")
-#   REFS=("url|Public tweet|https://twitter.com/..." "file|Notice letter|cases/example-entity-sample/notice_of_intent.md")
+#   REFS=("url|Public tweet|https://x.com/..." "file|Notice letter|cases/example-entity-sample/notice_of_intent.md")
 #   NOTICE_LETTER="path/to/notice.md"
 #
 # Notes:
@@ -117,9 +117,9 @@ fi
 # Prepare paths
 CASE_DIR="cases/${ENTITY_ID}-${SLUG}"
 TIMEDATE="${DATE_ISO%%T*}"   # YYYY-MM-DD
-TIMELINE_FILE="timeline/${TIMEDATE}-${SLUG}.md"
+TIMELINE_FILE="${CASE_DIR}/timeline/${TIMEDATE}-${SLUG}.md"
 
-mkdir -p "${CASE_DIR}/evidence" "${CASE_DIR}/notes" "timeline"
+mkdir -p "${CASE_DIR}/evidence" "${CASE_DIR}/notes" "${CASE_DIR}/timeline"
 
 # Write case README (from template with substitutions)
 cat > "${CASE_DIR}/README.md" <<EOF

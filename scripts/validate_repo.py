@@ -4,7 +4,7 @@ Repository validator for Accountability Ledger.
 
 Checks:
 - Case folder naming: cases/{entity}-{slug}, each part: [a-z0-9-]+
-- Timeline filenames: timeline/YYYY-MM-DD-{slug}.md
+- Timeline filenames: cases/{entity}-{slug}/timeline/YYYY-MM-DD-{slug}.md (canonical); legacy timeline/YYYY-MM-DD-{slug}.md at repo root also validated
   - YAML front matter contains: date, actors, claims
   - date ISO 8601, matches filename date prefix
 - Checksum manifests (SHA256SUMS.txt):
@@ -106,39 +106,53 @@ def validate_cases(repo: Path) -> List[str]:
 
 def validate_timeline(repo: Path) -> List[str]:
     errors: List[str] = []
-    root = repo / "timeline"
-    if not root.exists():
-        return errors
-    for p in root.iterdir():
-        if p.is_file():
-            if not TIMELINE_FILE_RE.match(p.name):
-                errors.append(f"Invalid timeline filename: {p.name} (expected YYYY-MM-DD-{{slug}}.md)")
-                continue
-            text = p.read_text(encoding="utf-8")
-            data, _ = parse_front_matter(text)
-            # date
-            date = data.get("date", "")
-            if not date:
-                errors.append(f"Missing 'date' in front matter: {p.name}")
-            else:
-                fn_date = p.name[:10]
-                if not date.startswith(fn_date):
-                    errors.append(f"Timeline date mismatch in {p.name}: front matter '{date}' vs filename prefix '{fn_date}'")
-                try:
-                    # Accept Z suffix
-                    if "T" in date:
-                        datetime.fromisoformat(date.replace("Z", "+00:00"))
-                    else:
-                        # Allow YYYY-MM-DD only
-                        datetime.fromisoformat(date)
-                except Exception:
-                    errors.append(f"Invalid ISO 8601 date in {p.name}: '{date}'")
-            # actors
-            if "actors" not in data:
-                errors.append(f"Missing 'actors' in front matter: {p.name}")
-            # claims
-            if "claims" not in data:
-                errors.append(f"Missing 'claims' in front matter: {p.name}")
+
+    def validate_dir(dir_path: Path) -> None:
+        for p in dir_path.iterdir():
+            if p.is_file():
+                if not TIMELINE_FILE_RE.match(p.name):
+                    errors.append(f"Invalid timeline filename: {p.name} (expected YYYY-MM-DD-{{slug}}.md)")
+                    continue
+                text = p.read_text(encoding="utf-8")
+                data, _ = parse_front_matter(text)
+                # date
+                date = data.get("date", "")
+                if not date:
+                    errors.append(f"Missing 'date' in front matter: {p.name}")
+                else:
+                    fn_date = p.name[:10]
+                    if not date.startswith(fn_date):
+                        errors.append(f"Timeline date mismatch in {p.name}: front matter '{date}' vs filename prefix '{fn_date}'")
+                    try:
+                        # Accept Z suffix
+                        if "T" in date:
+                            datetime.fromisoformat(date.replace("Z", "+00:00"))
+                        else:
+                            # Allow YYYY-MM-DD only
+                            datetime.fromisoformat(date)
+                    except Exception:
+                        errors.append(f"Invalid ISO 8601 date in {p.name}: '{date}'")
+                # actors
+                if "actors" not in data:
+                    errors.append(f"Missing 'actors' in front matter: {p.name}")
+                # claims
+                if "claims" not in data:
+                    errors.append(f"Missing 'claims' in front matter: {p.name}")
+
+    # 1) Global timeline directory (legacy/back-compat)
+    global_root = repo / "timeline"
+    if global_root.exists():
+        validate_dir(global_root)
+
+    # 2) Per-case timelines: cases/{entity}-{slug}/timeline
+    cases_root = repo / "cases"
+    if cases_root.exists():
+        for case_dir in cases_root.iterdir():
+            if case_dir.is_dir():
+                case_timeline = case_dir / "timeline"
+                if case_timeline.exists() and case_timeline.is_dir():
+                    validate_dir(case_timeline)
+
     return errors
 
 
