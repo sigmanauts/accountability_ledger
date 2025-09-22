@@ -31,7 +31,7 @@ The Respondent’s representatives have engaged in impermissible attempts to ext
 - Extortion for Continued Listing: A representative of the Respondent privately informed that HTX would reverse the delisting decision in exchange for a payment. This was first framed as a USD 30,000 “trading competition” fee, then later revised to a direct “payment to avoid delisting,” with the implication that the amount was negotiable.
 - Abuse of Position: This conduct—including the private offer of a payment to avert delisting—constitutes an abuse of the Respondent’s market position and an attempted quid‑pro‑quo transaction. It is a direct attempt to compel the Ergo Foundation to make a payment outside the terms of the signed contract.
 
-The Claimant has collected substantial evidence, including chat logs and screenshots of these impermissible attempts, which will be submitted as evidence in the forthcoming legal proceedings.
+The Claimant has collected substantial evidence, including chat logs and screenshots of these impermissible attempts, which will be submitted as evidence in the forthcoming legal proceedings. See exhibits: cases/htx-notice-of-intent/evidence/Lei_qx/messages.html and cases/htx-notice-of-intent/evidence/Lei_qx/result.json, summarized at cases/htx-notice-of-intent/evidence/lei_qx_summary.md.
 
 As a direct result of the Respondent’s conduct, the Ergo Foundation has suffered losses estimated at no less than USD 450,000. The Claimant reserves the right to seek additional damages, including punitive damages, interest, and costs, as further evidence of wrongdoing may emerge.
 

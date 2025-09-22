@@ -1,0 +1,258 @@
+{
+ "name": "HTX <> ERG",
+ "type": "private_supergroup",
+ "id": 3025833487,
+ "messages": [
+  {
+   "id": 1,
+   "type": "service",
+   "date": "2025-09-16T10:52:28",
+   "date_unixtime": "1758034348",
+   "actor": "HTX <> ERG",
+   "actor_id": "channel3025833487",
+   "action": "migrate_from_group",
+   "title": "HTX <> ERG",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 2,
+   "type": "message",
+   "date": "2025-09-16T10:53:31",
+   "date_unixtime": "1758034411",
+   "from": "Lei_HTX Listing 🚀 @DC",
+   "from_id": "user1464868067",
+   "text": "Hi",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Hi"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "type": "message",
+   "date": "2025-09-16T10:54:29",
+   "date_unixtime": "1758034469",
+   "from": "qx()",
+   "from_id": "user1853315216",
+   "text": "Hi Lei, nice to meet you! I'm qx from Ergo, wanted to discuss the leading up to us being put on the delist list today.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Hi Lei, nice to meet you! I'm qx from Ergo, wanted to discuss the leading up to us being put on the delist list today."
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "type": "message",
+   "date": "2025-09-16T10:55:28",
+   "date_unixtime": "1758034528",
+   "from": "qx()",
+   "from_id": "user1853315216",
+   "text": "As you know, there was nothing in our contract about volume, and, we were not emailed about even being put on the ST. Beyond that, we have met the liquid demands of the new enforced policy once we were finally notified.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "As you know, there was nothing in our contract about volume, and, we were not emailed about even being put on the ST. Beyond that, we have met the liquid demands of the new enforced policy once we were finally notified."
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "type": "message",
+   "date": "2025-09-16T10:57:30",
+   "date_unixtime": "1758034650",
+   "from": "qx()",
+   "from_id": "user1853315216",
+   "text": "wondering what we can do to avoid this delisting considering we are meeting new demands?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "wondering what we can do to avoid this delisting considering we are meeting new demands?"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "type": "message",
+   "date": "2025-09-16T10:57:34",
+   "date_unixtime": "1758034654",
+   "from": "Lei_HTX Listing 🚀 @DC",
+   "from_id": "user1464868067",
+   "text": "Sry for the delisting issue you need to speak with our rm team",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Sry for the delisting issue you need to speak with our rm team"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "type": "message",
+   "date": "2025-09-16T10:58:58",
+   "date_unixtime": "1758034738",
+   "from": "Lei_HTX Listing 🚀 @DC",
+   "from_id": "user1464868067",
+   "text": "Jon reached out for help",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Jon reached out for help"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "type": "message",
+   "date": "2025-09-16T10:59:00",
+   "date_unixtime": "1758034740",
+   "from": "qx()",
+   "from_id": "user1853315216",
+   "text": "could you add them to this chat please? our current contact has no escalation ability it seems.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "could you add them to this chat please? our current contact has no escalation ability it seems."
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "type": "message",
+   "date": "2025-09-16T10:59:12",
+   "date_unixtime": "1758034752",
+   "from": "Lei_HTX Listing 🚀 @DC",
+   "from_id": "user1464868067",
+   "photo": "photos/photo_1@16-09-2025_10-59-12.jpg",
+   "photo_file_size": 166184,
+   "width": 1069,
+   "height": 1280,
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 10,
+   "type": "message",
+   "date": "2025-09-16T10:59:17",
+   "date_unixtime": "1758034757",
+   "from": "Lei_HTX Listing 🚀 @DC",
+   "from_id": "user1464868067",
+   "text": "But you guys said no",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "But you guys said no"
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "type": "message",
+   "date": "2025-09-16T10:59:23",
+   "date_unixtime": "1758034763",
+   "from": "Lei_HTX Listing 🚀 @DC",
+   "from_id": "user1464868067",
+   "text": "So we proceed",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "So we proceed"
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "type": "message",
+   "date": "2025-09-16T10:59:36",
+   "date_unixtime": "1758034776",
+   "from": "qx()",
+   "from_id": "user1853315216",
+   "reply_to_message_id": 7,
+   "text": "so you offered us to pay 100k to keep listing? wasn't sure if that was legit",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "so you offered us to pay 100k to keep listing? wasn't sure if that was legit"
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "type": "message",
+   "date": "2025-09-16T10:59:58",
+   "date_unixtime": "1758034798",
+   "from": "Lei_HTX Listing 🚀 @DC",
+   "from_id": "user1464868067",
+   "text": "That's the marketing campaign proposal",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "That's the marketing campaign proposal"
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "type": "message",
+   "date": "2025-09-16T11:00:05",
+   "date_unixtime": "1758034805",
+   "from": "Lei_HTX Listing 🚀 @DC",
+   "from_id": "user1464868067",
+   "text": "Not a service fee boss",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Not a service fee boss"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "type": "message",
+   "date": "2025-09-16T11:00:21",
+   "date_unixtime": "1758034821",
+   "from": "qx()",
+   "from_id": "user1853315216",
+   "text": "how does a marketing campaign solve the issue?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "how does a marketing campaign solve the issue?"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "type": "message",
+   "date": "2025-09-16T11:00:25",
+   "date_unixtime": "1758034825",
+   "from": "Lei_HTX Listing 🚀 @DC",
+   "from_id": "user1464868067",
+   "text": "Please speak with Jacky about this",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Please speak with Jacky about this"
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "type": "service",
+   "date": "2025-09-16T11:00:47",
+   "date_unixtime": "1758034847",
+   "actor": "Lei_HTX Listing 🚀 @DC",
+   "actor_id": "user1464868067",
+   "action": "remove_members",
+   "members": [
+    "Lei_HTX Listing 🚀 @DC"
+   ],
+   "text": "",
+   "text_entities": []
+  }
+ ]
+}

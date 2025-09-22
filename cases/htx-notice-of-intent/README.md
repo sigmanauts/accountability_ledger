@@ -33,6 +33,13 @@ See timeline/2025-09-18-notice-of-intent.md
   - Provenance (durable link / content hash / on-chain ref): <ADD_TWEET_OR_THREAD_LINK_HERE> (consider archive + hash)
   - Notes: External public statement included for context; not a claim by the Ergo Foundation.
 
+- File:
+  - Title: Telegram chat export: “HTX <> ERG” (Lei_HTX Listing 🚀 @DC, qx())
+  - Location: cases/htx-notice-of-intent/evidence/Lei_qx/messages.html; cases/htx-notice-of-intent/evidence/Lei_qx/result.json
+  - Summary: cases/htx-notice-of-intent/evidence/lei_qx_summary.md
+  - Provenance (durable link / content hash / on-chain ref): (to be added via finalize.sh; consider archiving)
+  - Notes: Evidence of payment proposal framed as a “marketing campaign” (~USD 100k), refusal to add escalation party, and removal from the chat.
+
 ## Checksums
 (Optional) Use `bash scripts/finalize.sh --with-checksums --package cases/htx-notice-of-intent` to include hashes in a regulator-ready bundle.
 
